@@ -20,7 +20,7 @@ export default function Avatar({
 
   return (
     <div
-      className={`relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-zinc-100 text-sm ${containerClassName}`}
+      className={`bg-background-gray relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full text-sm ${containerClassName}`}
     >
       <Image
         src={src}

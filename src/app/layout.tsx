@@ -3,6 +3,8 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import { UserType } from "@/lib/types";
+import MainLayout from "@/components/MainLayout";
+import SidebarProvider from "@/context/sidebarContext";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -28,10 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.className} flex min-h-dvh flex-col text-sm`}
+        className={`${spaceGrotesk.className} text-foreground flex min-h-dvh flex-col text-sm`}
       >
-        <Header user={user} className={spaceGrotesk.className} />
-        {children}
+        <SidebarProvider>
+          <Header user={user} className={spaceGrotesk.className} />
+          <MainLayout>{children}</MainLayout>
+        </SidebarProvider>
       </body>
     </html>
   );

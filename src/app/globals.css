@@ -1,9 +1,30 @@
 @import "tailwindcss";
 
+:root {
+  --background: #fff;
+  --foreground: #121212;
+  --background-gray: #f4f4f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    --background: #121212;
+    --foreground: #fff;
+    --background-gray: #1e1e1e;
+  } */
+}
+
 * {
   outline: none;
+  color: var(--foreground);
 }
 
 button {
   cursor: pointer;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--background);
+  --color-background-gray: var(--background-gray);
 }
