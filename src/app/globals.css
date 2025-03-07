@@ -4,19 +4,20 @@
   --background: #fff;
   --foreground: #121212;
   --background-gray: #f4f4f5;
+  --accent-gray-200: #404040;
 }
 
 @media (prefers-color-scheme: dark) {
-  /* :root {
+  :root {
     --background: #121212;
     --foreground: #fff;
     --background-gray: #1e1e1e;
-  } */
+    --accent-gray-200: #ccc;
+  }
 }
 
 * {
   outline: none;
-  color: var(--foreground);
 }
 
 button {
@@ -25,6 +26,16 @@ button {
 
 @theme {
   --color-background: var(--background);
-  --color-foreground: var(--background);
+  --color-foreground: var(--foreground);
   --color-background-gray: var(--background-gray);
+  --color-accent-gray-200: var(--accent-gray-200);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }

@@ -3,7 +3,6 @@ import { HouseIcon, LayersIcon, SearchIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import ToggleSidebarButton from "./ToggleSidebarButton";
 import Logo from "./Logo";
 
 const navLinks = [
