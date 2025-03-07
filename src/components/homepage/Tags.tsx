@@ -31,9 +31,8 @@ const tags = [
 export default function Tags() {
   const tagsRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true); // Initially set to true, as it can scroll to the right.
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Handle scrolling to the right
   function handleScrollRight() {
     if (tagsRef.current) {
       tagsRef.current.scrollBy({
@@ -43,7 +42,6 @@ export default function Tags() {
     }
   }
 
-  // Handle scrolling to the left
   function handleScrollLeft() {
     if (tagsRef.current) {
       tagsRef.current.scrollBy({
@@ -53,7 +51,6 @@ export default function Tags() {
     }
   }
 
-  // Update scrollable state on scroll
   function updateScrollStates() {
     if (tagsRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = tagsRef.current;
@@ -63,7 +60,6 @@ export default function Tags() {
     }
   }
 
-  // Attach event listener to detect scroll changes
   useEffect(() => {
     updateScrollStates(); // Initial check
     const onScroll = () => updateScrollStates();
@@ -71,7 +67,6 @@ export default function Tags() {
     const currentTagsRef = tagsRef.current;
     currentTagsRef?.addEventListener("scroll", onScroll);
 
-    // Cleanup the event listener on unmount
     return () => {
       currentTagsRef?.removeEventListener("scroll", onScroll);
     };
@@ -82,7 +77,7 @@ export default function Tags() {
       <button
         onClick={handleScrollLeft}
         disabled={!canScrollLeft}
-        className={`p-2 ${!canScrollLeft ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
+        className={`p-1 sm:p-2 ${!canScrollLeft ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
       >
         <ChevronLeftIcon className="h-5 w-5" />
       </button>
@@ -95,7 +90,7 @@ export default function Tags() {
           <Link
             href={`/search?query=${convertToURL(tag)}`}
             key={tag}
-            className="bg-background text-accent-gray-200 hover:text-foreground inline-block rounded-full p-1 px-2 duration-200"
+            className="bg-background text-accent-gray-200 hover:text-foreground inline-block rounded-full p-1 px-2 text-[.9rem] duration-200"
           >
             {tag}
           </Link>
@@ -105,7 +100,7 @@ export default function Tags() {
       <button
         onClick={handleScrollRight}
         disabled={!canScrollRight}
-        className={`p-2 ${!canScrollRight ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
+        className={`p-1 sm:p-2 ${!canScrollRight ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
       >
         <ChevronRightIcon className="h-5 w-5" />
       </button>

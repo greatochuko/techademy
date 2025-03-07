@@ -21,7 +21,7 @@ export default function Sidebar() {
 
   return (
     <section
-      className={`bg-background sticky top-14 h-[calc(100dvh-_56px)] px-2 py-4 duration-200 ${open ? "w-16 md:w-52" : "w-16"}`}
+      className={`bg-background sticky top-14 hidden h-[calc(100dvh-_56px)] px-2 py-4 duration-200 sm:block ${open ? "w-16 md:w-52" : "w-16"}`}
     >
       <nav>
         <ul className="flex flex-col gap-2">

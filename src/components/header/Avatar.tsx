@@ -28,7 +28,7 @@ export default function Avatar({
         {...props}
         fill
         onLoad={() => setImageLoaded(true)}
-        className={`${imageLoaded ? "visible opacity-100" : "invisible opacity-0"} ${props.className}`}
+        className={`object-cover ${imageLoaded ? "visible opacity-100" : "invisible opacity-0"} ${props.className}`}
       />
       <span className="font-medium">{fallback}</span>
     </div>
