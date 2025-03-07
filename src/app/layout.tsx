@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.className} text-foreground flex min-h-dvh flex-col text-sm`}
       >
         <SidebarProvider>
-          <Header user={user} className={spaceGrotesk.className} />
+          <Header user={user} />
           <MainLayout>{children}</MainLayout>
         </SidebarProvider>
       </body>

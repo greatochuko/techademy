@@ -1,3 +1,4 @@
+import { useSidebarContext } from "@/context/sidebarContext";
 import { HouseIcon, LayersIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,7 +10,9 @@ const navLinks = [
   { text: "Categories", href: "/categories", Icon: LayersIcon },
 ];
 
-export default function Sidebar({ open }: { open: boolean }) {
+export default function Sidebar() {
+  const { open } = useSidebarContext();
+
   const pathname = usePathname();
 
   const isCurrentPath = (href: string) => {
@@ -18,7 +21,7 @@ export default function Sidebar({ open }: { open: boolean }) {
 
   return (
     <section
-      className={`bg-background sticky top-14 h-[calc(100dvh-_56px)] p-2 duration-200 ${open ? "w-52" : "w-16"}`}
+      className={`bg-background sticky top-14 h-[calc(100dvh-_56px)] px-2 py-4 duration-200 ${open ? "w-16 md:w-52" : "w-16"}`}
     >
       <nav>
         <ul className="flex flex-col gap-2">
@@ -30,7 +33,7 @@ export default function Sidebar({ open }: { open: boolean }) {
               >
                 <navLink.Icon className="my-0.5 h-4 w-4" />
                 <span
-                  className={`flex-1 overflow-hidden duration-200 ${open ? "ml-2" : "ml-0"}`}
+                  className={`flex-1 overflow-hidden duration-200 ${open ? "md:ml-2" : "ml-0"}`}
                 >
                   {navLink.text}
                 </span>
