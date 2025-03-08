@@ -1,15 +1,10 @@
 import { useSidebarContext } from "@/context/sidebarContext";
-import { HouseIcon, LayersIcon, SearchIcon, XIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import Logo from "./Logo";
-
-const navLinks = [
-  { text: "Home", href: "/", Icon: HouseIcon },
-  { text: "Explore", href: "/explore", Icon: SearchIcon },
-  { text: "Categories", href: "/categories", Icon: LayersIcon },
-];
+import { navLinks } from "@/lib/data";
 
 export default function MobileSidebar() {
   const { open, toggleSidebar } = useSidebarContext();

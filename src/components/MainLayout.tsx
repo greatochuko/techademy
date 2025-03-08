@@ -6,10 +6,10 @@ import MobileSidebar from "./header/MobileSidebar";
 
 export default function MainLayout({ children }: PropsWithChildren) {
   return (
-    <main className="bg-background-gray flex w-screen flex-1">
+    <main className="flex flex-1 w-screen bg-background-gray">
       <Sidebar />
       <MobileSidebar />
-      <section className="w-full flex-1 overflow-hidden p-4">
+      <section className="w-full flex-1 overflow-hidden px-[5%] py-4 sm:px-6">
         {children}
       </section>
     </main>

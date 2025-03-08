@@ -36,7 +36,7 @@ export default function Tags() {
   function handleScrollRight() {
     if (tagsRef.current) {
       tagsRef.current.scrollBy({
-        left: tagsRef.current.offsetWidth,
+        left: tagsRef.current.offsetWidth / 4,
         behavior: "smooth",
       });
     }
@@ -45,7 +45,7 @@ export default function Tags() {
   function handleScrollLeft() {
     if (tagsRef.current) {
       tagsRef.current.scrollBy({
-        left: -tagsRef.current.offsetWidth,
+        left: -tagsRef.current.offsetWidth / 4,
         behavior: "smooth",
       });
     }
@@ -77,7 +77,7 @@ export default function Tags() {
       <button
         onClick={handleScrollLeft}
         disabled={!canScrollLeft}
-        className={`p-1 sm:p-2 ${!canScrollLeft ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
+        className={`p-1 pr-0 sm:p-2 sm:pr-0 ${!canScrollLeft ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
       >
         <ChevronLeftIcon className="h-5 w-5" />
       </button>
@@ -100,7 +100,7 @@ export default function Tags() {
       <button
         onClick={handleScrollRight}
         disabled={!canScrollRight}
-        className={`p-1 sm:p-2 ${!canScrollRight ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
+        className={`p-1 pl-0 sm:p-2 sm:pl-0 ${!canScrollRight ? "cursor-not-allowed opacity-50" : "text-accent-gray-200 hover:text-foreground"}`}
       >
         <ChevronRightIcon className="h-5 w-5" />
       </button>

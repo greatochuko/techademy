@@ -1,14 +1,8 @@
 import { useSidebarContext } from "@/context/sidebarContext";
-import { HouseIcon, LayersIcon, SearchIcon } from "lucide-react";
+import { navLinks } from "@/lib/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-
-const navLinks = [
-  { text: "Home", href: "/", Icon: HouseIcon },
-  { text: "Explore", href: "/explore", Icon: SearchIcon },
-  { text: "Categories", href: "/categories", Icon: LayersIcon },
-];
 
 export default function Sidebar() {
   const { open } = useSidebarContext();

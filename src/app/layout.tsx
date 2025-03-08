@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 const user: UserType = {
+  _id: "1",
   firstName: "John",
   lastName: "Doe",
   profilePicture: "/profile-picture.jpg",

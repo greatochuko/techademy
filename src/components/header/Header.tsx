@@ -24,7 +24,7 @@ export default function Header({ user }: HeaderProps) {
         <>
           <button className="hover:bg-background-gray flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-[9px] duration-200 md:mr-4">
             <PlusIcon className="h-4 w-4" />
-            Create
+            Contribute
           </button>
           <UserDropdown user={user} />
         </>
